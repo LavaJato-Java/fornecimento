@@ -1,4 +1,4 @@
-#LavaJata Application - Microservice Fornecimento
+# LavaJata Application - Microservice Fornecimento
 
 Microserviço que realiza um pedido de produtos para um fornecedor. 
 
@@ -15,21 +15,80 @@ Microserviço usando:
 
 . usando Padrão Saga Coreografado para conexão com os outros microserviços.
 
-##Endpoints
+## Endpoints
 
 ### POST /realizarpedido/
 
 Request 
-
-{<br>
-    String nome;<br>
-    String marca;<br>
-    int quantidade;<br>
-    Double preco_compra<br>
-    Fornecedor : { <br>
-        String razaoSocial <br>
-        String cnpj<br>
-        } <br>
-} <br> 
+```java
+{
+	String nome;
+	String marca;
+	int quantidade;
+	Double preco_compra;
+	Fornecedor : {
+		            String razaoSocial;
+		            String cnpj;
+                  };
+}
+```
 
 Response : void
+
+### GET /pedido/{idPedido}
+
+Response 
+```java
+{
+	UUID id;
+	Fornecedor : {
+                UUID id;
+                String razaoSocial;
+                String cnpj;
+                  };
+        List<ItensPedidos> : [
+                UUID id;
+                String nome;
+                String marca;
+                int quantidade;
+                Double precoCompra;
+    ];
+}
+```
+
+
+### GET /relatorio/{idFornecedor}
+
+Response 
+```java
+{
+	UUID id;
+	Fornecedor : {
+                UUID id;
+                String razaoSocial;
+                String cnpj;
+                  };
+        List<Pedido> : [
+                {
+                UUID id;
+                  List<ItensPedidos> : [
+                        UUID id;
+                        String nome;
+                        String marca;
+                        int quantidade;
+                        Double precoCompra;
+                            ];
+                },
+                   {
+                UUID id;
+                  List<ItensPedidos> : [
+                        UUID id;
+                        String nome;
+                        String marca;
+                        int quantidade;
+                        Double precoCompra;
+                            ];
+                },
+    ];
+}
+```
