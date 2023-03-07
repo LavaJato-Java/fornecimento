@@ -35,7 +35,7 @@ Request
 
 Response : void
 
-### GET /pedido/{idPedido}
+### GET /realizarpedido/pedido/{idPedido}
 
 Response 
 ```java
@@ -57,7 +57,7 @@ Response
 ```
 
 
-### GET /relatorio/{idFornecedor}
+### GET /realizarpedido/relatorio/{idFornecedor}
 
 Response 
 ```java
