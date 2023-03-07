@@ -1,9 +1,9 @@
 package com.example.lavajato.fornecimento.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.UUID;
 
 //import javax.persistence.*;
 
@@ -12,10 +12,11 @@ import lombok.Data;
 @Table(name="Fornecedor")
 public class Fornecedor {
 
-    @Id
     private String cnpj;
 
     private String razaoSocial;
 
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 }
