@@ -18,7 +18,7 @@ public class CreatePedidoService {
     private final PedidoRepository pedidoRepository;
     private final ItemPedidoRepository itemPedidoRepository;
     public Pedido execute(Pedido pedido, List<ItemPedido> itemPedidos){
-        pedido.setId(UUID.randomUUID().toString());
+        //pedido.setId(UUID.randomUUID().toString());
         Pedido savedPedido= pedidoRepository.save(pedido);
         itemPedidos
                 .forEach(itemPedido ->

@@ -14,7 +14,7 @@ public class CreateOrRetrieveProdutoService {
     private final ProdutoRepository produtoRepository;
 
     public Produto execute(Produto produto){
-        produto.setId(UUID.randomUUID().toString());
+        //produto.setId(UUID.randomUUID().toString());
         return produtoRepository.findByNomeAndMarcaAndQuantidade(produto.getNome(), produto.getMarca()
                 , produto.getQuantidade()).orElse(produtoRepository.save(produto));
     }

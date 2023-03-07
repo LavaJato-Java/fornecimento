@@ -16,9 +16,9 @@ public class CreateFornecedorService {
 
     private final FornecedorRepository fornecedorRepository;
     public Fornecedor execute(Fornecedor fornecedor){
-        fornecedor.setId(UUID.randomUUID().toString());
+        //fornecedor.setId(UUID.randomUUID().toString());
         log.info("Fornecedor de ID {}",fornecedor.getId());
-        return fornecedorRepository.findById(fornecedor.getCnpj())
+        return fornecedorRepository.findById(fornecedor.getId())
                 .orElse(fornecedorRepository.save(fornecedor));
 
     }
