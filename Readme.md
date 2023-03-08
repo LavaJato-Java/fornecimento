@@ -1,4 +1,4 @@
-# LavaJata Application - Microservice Fornecimento
+# LavaJato Application - Microserviço Fornecimento
 
 Microserviço que realiza um pedido de produtos para um fornecedor. 
 
@@ -9,11 +9,11 @@ pagamento desse pedido.
 
 Microserviço usando: 
 
-. usando serviço de mensageria.
+. serviço de mensageria.
 
-. usando Redis para Cache
+. Redis para Cache
 
-. usando Padrão Saga Coreografado para conexão com os outros microserviços.
+. Padrão Saga Coreografado para conexão com os outros microserviços.
 
 ## Endpoints
 
