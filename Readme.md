@@ -1,6 +1,6 @@
 # LavaJato Application - Microserviço Fornecimento
 
-Microserviço que realiza um pedido de produtos para um fornecedor. 
+Microserviço que realiza um pedido de produto para um fornecedor. 
 
 Ele recebe uma Request com todos os dados do pedido, incluindo os dados do produto e do Fornecedor. 
 
